@@ -1,0 +1,21 @@
+{% extends "project/base.html" %}
+{% block title %}Notatnik{% endblock %}
+{% block content %}
+ {% for post in posts %}
+  <div class="contener">
+     <div class="title">
+         <a href="{{ post.get_absolute_url }}">
+        {{ post.tytul }}
+        </a>
+     </div>
+     <div class="data">
+        {{ post.data_utworzenia }} przez {{ post.autor }}
+     </div>
+     <div class="text">
+         <p>
+             {{ post.tresc|truncatewords:30|linebreaks }}
+         </p>
+     </div>
+  </div>
+ {% endfor %}
+{% endblock %}
