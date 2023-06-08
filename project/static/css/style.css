@@ -49,7 +49,7 @@ div.conten{
 }
 div.head{
     display: flex;
-    background-color: GREEN;
+    background-color: 	#FED8B1;
 }
 div.head>p{
     width: 15%;

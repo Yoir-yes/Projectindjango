@@ -30,13 +30,15 @@
               <button type="button" class="btn btn-outline-danger" disabled><a href=""><img src="{% static 'photos/remove.png' %}" alt="remove"></a></button>
             </div>
           </div>
-    <div class="container-xl">
+          <div class="container-xl">
         <div class="conten">
-            <div class="head">
+            <div class="head" id="colo">
                 <h1>{{ post.tytul }}</h1>
-                <p>{{ post.priorytet }}</p>
+                <p id="name">{{ post.priorytet }}</p>
             </div>
         <p>Opublikowany {{ post.data_utworzenia }} przez {{ post.autor }}</p>
         <div class="souce">{{ post.tresc|linebreaks }}</div>
         </div>
     </div>
+        </main>
+  <script src="{% static 'js/script.js' %}"> </script>
