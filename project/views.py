@@ -23,7 +23,7 @@ class add_post(CreateView):
 class update_post(UpdateView):
     model = Post
     template_name = 'project/post/updatingpost.html'
-    fields = ['tytul','tresc','status']
+    fields = ['tytul','tresc','priorytet']
 
     def form_valid(self, form):
         note = form.save()

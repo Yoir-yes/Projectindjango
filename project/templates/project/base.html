@@ -41,15 +41,17 @@
                   </div>
                   <div class="content">
                     {{ post.tresc|truncatewords:30|linebreaks }}
+
+                  </div>
+                  <div class="status">
+                      {{ post.priorytet }}
                   </div>
                   <div class="date">
                     {{ post.data_utworzenia }} przez {{ post.autor }}
                     <a href="/detail/edit/{{ post.pk }}">Edytuj</a>
+                  </div>
                 </div>
-        </div>
-
- {% endfor %}
-
+            {% endfor %}
           </div>
         {% include "project/pagination.html" with page=page_obj %}
 

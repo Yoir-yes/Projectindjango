@@ -38,19 +38,46 @@ div.post{
     border-radius: 5px;
     background-color: #3e3e42;
     color:white
+}
+div.conten{
 
+    margin-top:10px;
+    color: white;
+    background-color: #3e3e42;
+    margin-left:25%;
+    margin-right: 30%;
+}
+div.head{
+    display: flex;
+    background-color: GREEN;
+}
+div.head>p{
+    width: 15%;
+    margin-left: 15px;
+}
+div.head>h1{
+    width: 85%;
+    margin-left: 5px;
+}
+div.souce{
+    padding-bottom: 10px;
 }
 div.title{
     height: 30px;
     text-align: center;
 }
-div>a{
+div.title>a{
     text-decoration: none;
     font-size: 25px;
     color: white;
 }
+div.date>a{
+    text-decoration: none;
+    font-size: 10px;
+    color: #5b80b2;
+}
 div.content{
-    height: 190px;
+    height: 170px;
     padding: 7px;
 }
 div.date{
@@ -60,4 +87,8 @@ div.date{
 }
 div.pagination{
     color:white;
+}
+div.status{
+    text-align: center;
+    font-size: 15px;
 }
