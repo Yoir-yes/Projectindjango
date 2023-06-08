@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView,DetailView, CreateView
 from .models import Post
+
 
 class post_list(ListView):
     model = Post
@@ -17,4 +18,4 @@ class add_post(CreateView):
 
     def form_valid(self, form):
         note = form.save()
-        return redirect('NotsApp:details', pk=note.pk)
+        return redirect('project:detail', pk=note.pk)

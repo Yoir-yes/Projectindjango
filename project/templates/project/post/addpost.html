@@ -6,25 +6,7 @@
 {% block content %}
     <form method="post" class="edit_form">
         {% csrf_token %}
-        <div class="title">
-            <h1>Title</h1>
-            {{ form.tytul }}
-        </div>
-        <div class="author">
-            <h1>Author</h1>
-            {{ form.autor }}
-        </div>
-        <div class=".options">
-            <div class="priority">
-                Priority
-                {{ form.priority }}
-            </div>
-        </div>
-        <div class="text">
-            {{ form.tresc }}
-        </div>
-        <div class="add">
-            <button>Save</button>
-        </div>
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Post</button>
     </form>
 {% endblock %}

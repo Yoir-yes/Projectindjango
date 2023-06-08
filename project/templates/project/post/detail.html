@@ -1,9 +1,7 @@
 {% extends "project/base.html" %}
-{% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <p class="date">Opublikowany {{ post.publish }} przez {{ post.author }}</p>
-    {{ post.body|linebreaks }}
-
+    <h1>{{ post.tytul }}</h1>
+    <p class="date">Opublikowany {{ post.data_utworzenia }} przez {{ post.autor }}</p>
+    {{ post.tresc|linebreaks }}
 {% endblock %}
