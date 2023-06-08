@@ -2,20 +2,16 @@
 {% block title %}Notatnik{% endblock %}
 {% block content %}
  {% for post in posts %}
-  <div class="contener">
-     <div class="title">
-         <a href="{{ post.get_absolute_url }}">
-        {{ post.tytul }}
-        </a>
-     </div>
-     <div class="data">
-        {{ post.data_utworzenia }} przez {{ post.autor }}
-     </div>
-     <div class="text">
-         <p>
-             {{ post.tresc|truncatewords:30|linebreaks }}
-         </p>
-     </div>
-  </div>
+  <div class="post">
+          <div class="title">
+            <a href="{{ post.get_absolute_url }}"> {{ post.tytul }}</a>
+          </div>
+          <div class="content">
+            {{ post.tresc|truncatewords:30|linebreaks }}
+          </div>
+          <div class="date">
+            {{ post.data_utworzenia }} przez {{ post.autor }}
+          </div>
+        </div>
  {% endfor %}
 {% endblock %}
