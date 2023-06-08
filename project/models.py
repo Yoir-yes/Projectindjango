@@ -3,10 +3,14 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+
+
 class Post(models.Model):
     STATUS_CHOICES = (
-        ('draft', 'Draft'),
-        ('published','Published'),
+        ('very important', 'Very Important'),
+        ('important','Important'),
+        ('not as important', 'Not as Important'),
+        ('not important', 'Not Important'),
     )
     tytul = models.CharField(max_length=100)
     tresc = models.TextField()

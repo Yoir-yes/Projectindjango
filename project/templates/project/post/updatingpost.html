@@ -1,0 +1,12 @@
+{% extends "project/base.html" %}
+
+{% block title %}Edytowanie Notatki{% endblock %}
+
+
+{% block content %}
+    <form method="post" class="edit_form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary">Post</button>
+    </form>
+{% endblock %}
