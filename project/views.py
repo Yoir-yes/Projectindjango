@@ -1,10 +1,20 @@
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView,DetailView, CreateView
 from .models import Post
 
-def post_list(request):
-    posts = Post.objects.all()
-    return render(request,'project/post/list.html',{'posts':posts})
+class post_list(ListView):
+    model = Post
+    paginate_by = 8
+    template_name = 'project/post/list.html'
 
-def post_detail(request,post):
-    post = get_object_or_404(Post)
-    return render(request,'project/post/detail.html',{'posts':post})
+class post_detail(DetailView):
+    model = Post
+    template_name = 'project/post/detail.html'
+class add_post(CreateView):
+    model = Post
+    template_name = 'project/post/addpost.html'
+    fields = '__all__'
+
+    def form_valid(self, form):
+        note = form.save()
+        return redirect('NotsApp:details', pk=note.pk)
