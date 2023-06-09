@@ -5,6 +5,7 @@ from django.urls import reverse
 
 
 
+
 class Post(models.Model):
     STATUS_CHOICES = (
         ('very important', 'Bardzo Ważne'),
@@ -22,3 +23,5 @@ class Post(models.Model):
         return self.tytul
     def get_absolute_url(self):
         return reverse('detail', args=(str(self.id)))
+
+

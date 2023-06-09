@@ -1,12 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView,DetailView, CreateView, UpdateView
 from .models import Post
-
+from .filters import PostFilter
 
 class post_list(ListView):
     model = Post
+    filter = PostFilter
     paginate_by = 8
     template_name = 'project/post/list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
+        return context
 
 class post_detail(DetailView):
     model = Post

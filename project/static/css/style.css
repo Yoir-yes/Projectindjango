@@ -26,6 +26,7 @@ div.panel>div{
 }
 div.add{
     padding-left:10px;
+    padding-right: 20px;
 }
 div.notes{
     display: flex;
@@ -49,6 +50,23 @@ div.conten{
 }
 form {
   padding: 15px 0 15px 5%;
+}
+form.nie{
+    padding: 15px 0 0 7px;
+}
+div.form{
+    color: white;
+    display: block;
+}
+div.form select{
+   background-color: #3e3e42;
+    color: white;
+    height: 55px;
+    width: auto;
+}
+div.buttons{
+    width: 30%;
+    display: flex;
 }
 
 form p:nth-child(2) {
