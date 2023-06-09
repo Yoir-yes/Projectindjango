@@ -47,6 +47,44 @@ div.conten{
     margin-left:25%;
     margin-right: 30%;
 }
+form {
+  padding: 15px 0 15px 5%;
+}
+
+form p:nth-child(2) {
+    font-size: large;
+    padding-left: 15%;
+    color: whitesmoke;
+}
+form p:nth-child(3) {
+    display: flex;
+    font-size: 20px;
+}
+
+form label {
+  font-size: 18px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+  background-color: #1e1e1e;
+    color:white;
+}
+form textarea{
+  height: 250px;
+    width: 450px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+form select{
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+}
+
 div.head{
     display: flex;
     background-color: 	#FED8B1;

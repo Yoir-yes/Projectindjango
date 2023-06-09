@@ -43,7 +43,7 @@
                     {{ post.tresc|truncatewords:30|linebreaks }}
 
                   </div>
-                  <div class="status">
+                  <div class="status" id="colo_{{ post.pk }}">
                       {{ post.priorytet }}
                   </div>
                   <div class="date">
@@ -51,6 +51,7 @@
                     <a href="/detail/edit/{{ post.pk }}">Edytuj</a>
                   </div>
                 </div>
+
             {% endfor %}
           </div>
         {% include "project/pagination.html" with page=page_obj %}
@@ -61,5 +62,26 @@
         </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+           <script>
+                        var elements = document.getElementsByClassName('status');
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var tekst = element.innerText.trim();
+        var postId = element.id.split('_')[1];
+        var color;
+
+        if (tekst === "very important") {
+            color = '#A50021';
+        } else if (tekst === "important") {
+            color = '#FFD300';
+        } else if (tekst === "not as important") {
+            color = '#acff5e';
+        } else {
+            color = '#47ff47';
+        }
+
+        document.getElementById('colo_' + postId).style.backgroundColor = color;
+    }
+                 </script>
   </body>
 </html>
