@@ -3,16 +3,30 @@ body{
     margin: 0px;
     padding: 0px;
 }
+header,footer,main{
+    background-color: #2e2e30;
+}
 header{
-    margin: 0px;
-    height: 75px;
+    height: 70px;
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 0px 0px 5px;
+    background-color: #98FB98;
+    margin: 0px 0px 0px 5px;
+}
+footer{
+    color: white;
+
+}
+footer>p{
+    text-decoration: none;
+}
+article{
+    border: 1px solid white;
+    margin: auto;
 }
 div.name>a{
     font-size: 40px;
-    color: #007acc;
+    color: #1b1b1b;
     text-decoration: none;
 }
 div.panel{
@@ -41,7 +55,6 @@ div.post{
     color:white
 }
 div.conten{
-
     margin-top:10px;
     color: white;
     background-color: #3e3e42;
@@ -63,12 +76,13 @@ div.form select{
     color: white;
     height: 55px;
     width: auto;
+    margin-right: 15px;
 }
 div.buttons{
+    padding-top:10px;
     width: 30%;
     display: flex;
 }
-
 form p:nth-child(2) {
     font-size: large;
     padding-left: 15%;
@@ -78,11 +92,12 @@ form p:nth-child(3) {
     display: flex;
     font-size: 20px;
 }
-
+form>label:nth-child(3){
+    color: blue;
+}
 form label {
   font-size: 18px;
 }
-
 form input[type="text"],
 form input[type="email"],
 form select,
@@ -102,7 +117,6 @@ form select{
   border: none;
   border-radius: 4px;
 }
-
 div.head{
     display: flex;
     background-color: 	#FED8B1;
@@ -121,6 +135,7 @@ div.souce{
 div.title{
     height: 30px;
     text-align: center;
+    overflow: ellipsis;
 }
 div.title>a{
     text-decoration: none;
@@ -139,7 +154,7 @@ div.content{
 div.date{
     text-align: center;
     height: 30px;
-    background-color: #2f2f32;
+    background-color: #3e3e42;
 }
 div.pagination{
     color:white;
@@ -147,4 +162,7 @@ div.pagination{
 div.status{
     text-align: center;
     font-size: 15px;
+}
+div.container-xl{
+    padding-bottom: 30px;
 }

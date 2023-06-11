@@ -2,19 +2,19 @@
 
 {% block title %}Mój blog{% endblock %}
 
-
 {% block content %}
     {% for post in posts %}
-
         <h2>
-         <a href="{{ post.get_absolute_url }}">{{ post.title }}  </a>
+         <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         </h2>
         <!-- data -->
         <p class="date">
             Opublikowany {{ post.publish }} przez {{ post.author }}
         </p>
         {{ post.body|truncatewords:30|linebreaks }}
-
     {% endfor %}
+{% endblock %}
 
+{% block pagination %}  <!-- Dodany blok pagination -->
+    {% include "project/pagination.html" with page=page_obj %}
 {% endblock %}

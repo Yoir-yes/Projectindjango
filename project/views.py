@@ -2,18 +2,23 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView,DetailView, CreateView, UpdateView
 from .models import Post
 from .filters import PostFilter
+from django.core.paginator import Paginator
 
 class post_list(ListView):
     model = Post
-    filter = PostFilter
+    filter_class = PostFilter
     paginate_by = 8
     template_name = 'project/post/list.html'
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        self.filter = self.filter_class(self.request.GET, queryset=queryset)
+        return self.filter.qs
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = self.filter
         return context
-
 class post_detail(DetailView):
     model = Post
     template_name = 'project/post/detail.html'

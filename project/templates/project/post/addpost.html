@@ -10,22 +10,16 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>Dodawnaie Notatki</title>
 
 
 </head>
   <body>
      <header class="container-xl">
-         <div class="name"><a href="..">NoteWave</a> </div>
+         <div class="name"><a href="..">NoteWave <img src="{% static 'photos/notes.png' %}"></a> </div>
         </header>
         <main class="container-xl">
           <div class="panel">
-            <div class="add">
-              <button type="button" class="btn btn-outline-success"><a href="/add_post"><img src="{% static 'photos/add.png' %}" alt="add"></a></button>
-            </div>
-            <div class="remove">
-              <button type="button" class="btn btn-outline-danger" disabled><a href=""><img src="{% static 'photos/remove.png' %}" alt="remove"></a></button>
-            </div>
           </div>
             <div class="container-xl">
                 <div class="conten">
